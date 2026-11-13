@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Unisono",
-    "slug": "Unisono",
+    "name": "AuthWithSupabase",
+    "slug": "AuthWithSupabase",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
