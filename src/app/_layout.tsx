@@ -1,28 +1,37 @@
-import { useEffect } from "react";
-import { Stack } from "expo-router";
-import { useTheme, loadTheme } from "@/style/global";
+import { StyleSheet } from "react-native";
 
+import { Stack } from "expo-router";
+import HomeHeaderRight from "@/components/HomeHeaderRight";
 export default function RootLayout() {
-  const t = useTheme();
-  useEffect(() => {
-    loadTheme();
-  }, []);
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: t.bg },
-        headerTintColor: t.text,
+        headerStyle: styles.headerStyle,
+        headerTintColor: "white",
         headerShadowVisible: false,
-        contentStyle: { backgroundColor: t.bg },
       }}
     >
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen
-        name="settings"
+        name="index"
         options={{
-          headerShown: false,
+          title: "Home",
+          headerRight: () => <HomeHeaderRight />,
         }}
       />
     </Stack>
   );
 }
+
+const styles = StyleSheet.create({
+  headerStyle: {
+    backgroundColor: "black",
+  },
+  content: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
+  sym: {
+    color: "white",
+  },
+});
