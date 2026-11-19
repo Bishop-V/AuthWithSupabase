@@ -17,6 +17,7 @@ export default function Index() {
         <Button title="sign in" onPress={() => router.push('/signIn')} />
         <Button title="sign up" onPress={() => router.push('/signUp')} />
         <Button title="sign out" onPress={() => router.push('/signOut')} />
+          <Button title="test" onPress={() => router.push('/app')} />
       </View>
     </View>
   );

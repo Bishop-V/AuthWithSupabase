@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
-
+import { AuthProvider } from "./../../context/AuthProvider";
 import { Stack } from "expo-router";
 import HomeHeaderRight from "@/components/HomeHeaderRight";
 export default function RootLayout() {
   return (
+    <AuthProvider>
     <Stack
       screenOptions={{
         headerStyle: styles.headerStyle,
@@ -39,7 +40,15 @@ export default function RootLayout() {
           headerRight: () => <HomeHeaderRight />,
         }}
       />
+      <Stack.Screen
+        name="app"
+        options={{
+          title: "test",
+          headerRight: () => <HomeHeaderRight />,
+        }}
+      />
     </Stack>
+    </AuthProvider>
   );
 }
 
