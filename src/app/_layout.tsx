@@ -47,6 +47,13 @@ export default function RootLayout() {
           headerRight: () => <HomeHeaderRight />,
         }}
       />
+      <Stack.Screen
+        name="profile"
+        options={{
+          title: "profile",
+          headerRight: () => <HomeHeaderRight />,
+        }}
+      />
     </Stack>
     </AuthProvider>
   );
