@@ -1,3 +1,4 @@
+import { Link, router, useRouter } from 'expo-router';
 import {
   Text,
   View,
@@ -6,14 +7,16 @@ import {
   Pressable,
   Appearance,
   useColorScheme,
+  Button,
 } from "react-native";
-import global from "@/style/global";
 
 export default function Index() {
   return (
     <View style={[styles.main]}>
       <View style={styles.content}>
-        <Text style={styles.sym}>Not logged in!</Text>
+        <Button title="sign in" onPress={() => router.push('/signIn')} />
+        <Button title="sign up" onPress={() => router.push('/signUp')} />
+        <Button title="sign out" onPress={() => router.push('/signOut')} />
       </View>
     </View>
   );
