@@ -12,7 +12,9 @@ import {
 import { useState } from "react";
 
 export default function SignIn() {
-  const [text, onChangeText] = useState("");
+  const [passwordText, onChangePasswordText] = useState("");
+  const [userNameText, onChangeUserNameText] = useState("");
+  
 
   return (
     <View style={[styles.main]}>
@@ -20,15 +22,15 @@ export default function SignIn() {
         <Text style={styles.text}>Username</Text>
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeUserNameText}
+          value={userNameText}
           placeholder=""
         />
         <Text style={styles.text}>Password</Text>
         <TextInput
           style={styles.input}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangePasswordText}
+          value={passwordText}
           secureTextEntry
           placeholder=""
         />
