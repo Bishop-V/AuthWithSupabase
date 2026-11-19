@@ -362,6 +362,7 @@
 {"_e":"metro:bundling:done","_t":1795098061751,"id":"f","total":1,"ms":24.205}
 {"_e":"metro:client_log","_t":1795098061995,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
 {"_e":"metro:client_log","_t":1795098061995,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+<<<<<<< Updated upstream
 {"_e":"metro:client_log","_t":1795100073946,"level":"warn","data":["Route \"./home.tsx\" is missing the required default export. Ensure a React component is exported as default."]}
 {"_e":"metro:client_log","_t":1795100074133,"level":"warn","data":["Route \"./home.tsx\" is missing the required default export. Ensure a React component is exported as default."]}
 {"_e":"metro:client_log","_t":1795100094114,"level":"warn","data":["Route \"./app.tsx\" is missing the required default export. Ensure a React component is exported as default."]}
@@ -1024,3 +1025,79 @@
 {"_e":"metro:client_log","_t":1795102244112,"level":"error","data":["[Error: useAuth must be used inside <AuthProvider>]","\n\n\u001b[1mCode: AuthProvider.tsx\u001b[22m\n\u001b[0m \u001b[90m 44 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mfunction\u001b[39m useAuth() {\n \u001b[90m 45 |\u001b[39m   \u001b[36mconst\u001b[39m ctx \u001b[33m=\u001b[39m useContext(\u001b[33mAuthContext\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 46 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mctx) \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m\"useAuth must be used inside <AuthProvider>\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 47 |\u001b[39m   \u001b[36mreturn\u001b[39m ctx\u001b[33m;\u001b[39m\n \u001b[90m 48 |\u001b[39m }\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  useAuth (context\\AuthProvider.tsx:46:28)\u001b[39m\n\u001b[90m  Profile (src\\app\\app.tsx:12:30)\u001b[39m","\n\n\u001b[1mCode: _layout.tsx\u001b[22m\n\u001b[0m \u001b[90m  5 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mRootLayout\u001b[39m() {\n \u001b[90m  6 |\u001b[39m   \u001b[36mreturn\u001b[39m (\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33mStack\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m       screenOptions\u001b[33m=\u001b[39m{{\n \u001b[90m  9 |\u001b[39m         headerStyle\u001b[33m:\u001b[39m styles\u001b[33m.\u001b[39mheaderStyle\u001b[33m,\u001b[39m\n \u001b[90m 10 |\u001b[39m         headerTintColor\u001b[33m:\u001b[39m \u001b[32m\"white\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  RootLayout (src\\app\\_layout.tsx:7:5)\u001b[39m"]}
 {"_e":"metro:bundling:failed","_t":1795102377013,"id":"6","message":"Unable to resolve \"../context/AuthProvider\" from \"src\\app\\_layout.tsx\"\n  1 | import { StyleSheet } from \"react-native\";\n> 2 | import { AuthProvider } from \"../context/AuthProvider\";\n    |                               ^\n  3 | import { Stack } from \"expo-router\";\n  4 | import HomeHeaderRight from \"@/components/HomeHeaderRight\";\n  5 | export default function RootLayout() {","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\app\\_layout.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../context/AuthProvider\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\app\u001b[2m (require.context)\u001b[22m\n","filename":null,"targetModuleName":"../context/AuthProvider","originModulePath":"src\\app\\_layout.tsx"}
 {"_e":"metro:client_log","_t":1795102456799,"level":"error","data":["[TypeError: Cannot read property 'session' of undefined]","\n\n\u001b[1mCode: app.tsx\u001b[22m\n\u001b[0m \u001b[90m  9 |\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mProfile\u001b[39m() {\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 12 |\u001b[39m   \u001b[36mconst\u001b[39m { session } \u001b[33m=\u001b[39m useAuth()\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m userId \u001b[33m=\u001b[39m session\u001b[33m?\u001b[39m\u001b[33m.\u001b[39muser\u001b[33m.\u001b[39mid\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mconst\u001b[39m [profile\u001b[33m,\u001b[39m setProfile] \u001b[33m=\u001b[39m useState\u001b[33m<\u001b[39m\u001b[33mProfileData\u001b[39m \u001b[33m|\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m>\u001b[39m(\u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  Profile (src\\app\\app.tsx:11:16)\u001b[39m","\n\n\u001b[1mCode: _layout.tsx\u001b[22m\n\u001b[0m \u001b[90m  6 |\u001b[39m   \u001b[36mreturn\u001b[39m (\n \u001b[90m  7 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33mAuthProvider\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33mStack\u001b[39m\n \u001b[90m    |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m       screenOptions\u001b[33m=\u001b[39m{{\n \u001b[90m 10 |\u001b[39m         headerStyle\u001b[33m:\u001b[39m styles\u001b[33m.\u001b[39mheaderStyle\u001b[33m,\u001b[39m\n \u001b[90m 11 |\u001b[39m         headerTintColor\u001b[33m:\u001b[39m \u001b[32m\"white\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  RootLayout (src\\app\\_layout.tsx:8:5)\u001b[39m"]}
+=======
+{"_e":"root:init","_t":1795098409136,"format":"v0-jsonl","version":"57.0.28"}
+{"_e":"env:mode","_t":1795098409137,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795098409139,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1795098409471,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../src/app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795098409688,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1795098409834,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795098410483,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795098411542,"id":"4","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1795098411543,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795098411550,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795098411650,"id":"4","progress":0.02979733560090703,"total":168,"current":29}
+{"_e":"metro:bundling:progress","_t":1795098411750,"id":"4","progress":0.15854435934627362,"total":329,"current":131}
+{"_e":"metro:bundling:progress","_t":1795098411851,"id":"4","progress":0.22407031040043,"total":488,"current":231}
+{"_e":"metro:bundling:progress","_t":1795098411951,"id":"4","progress":0.34073437320147626,"total":639,"current":373}
+{"_e":"metro:bundling:progress","_t":1795098412051,"id":"4","progress":0.3798522641797754,"total":821,"current":506}
+{"_e":"metro:bundling:progress","_t":1795098412151,"id":"4","progress":0.5649644001168308,"total":914,"current":687}
+{"_e":"metro:bundling:progress","_t":1795098412270,"id":"4","progress":0.8039929416764443,"total":987,"current":885}
+{"_e":"metro:bundling:progress","_t":1795098412369,"id":"4","progress":0.9065185479071612,"total":1065,"current":1014}
+{"_e":"metro:bundling:progress","_t":1795098412469,"id":"4","progress":0.9356872901368629,"total":1193,"current":1154}
+{"_e":"metro:bundling:progress","_t":1795098412573,"id":"4","progress":0.9358948818582491,"total":1289,"current":1247}
+{"_e":"metro:bundling:progress","_t":1795098412672,"id":"4","progress":0.9943141550892214,"total":1405,"current":1401}
+{"_e":"metro:bundling:progress","_t":1795098412899,"id":"4","progress":0.995734096579324,"total":1405,"current":1402}
+{"_e":"metro:bundling:done","_t":1795098412994,"id":"4","total":1405,"ms":1451.808719}
+{"_e":"metro:bundling:started","_t":1795098894324,"id":"6","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1795098894324,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795098894371,"id":"6","total":1,"ms":46.613545}
+{"_e":"metro:bundling:started","_t":1795098986664,"id":"7","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1795098986664,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795098986718,"id":"7","total":1,"ms":53.249197}
+{"_e":"root:init","_t":1795100143015,"format":"v0-jsonl","version":"57.0.28"}
+{"_e":"env:mode","_t":1795100143015,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795100143017,"mode":"development","files":["../../../.env.local"],"env":{"EXPO_PUBLIC_SUPABASE_KEY":"sb_publishable_o1gzHfzE46zu54LgLBkArA_vKAeZy8L","EXPO_PUBLIC_SUPABASE_URL":"https://kddsqbfrnvpnqllrxtck.supabase.co"}}
+{"_e":"devserver:start","_t":1795100143187,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../src/app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795100143322,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1795100143432,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795100144249,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795100226914,"id":"4","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1795100226915,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795100226920,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795100227021,"id":"4","progress":0.01639649018441404,"total":164,"current":21}
+{"_e":"metro:bundling:progress","_t":1795100227121,"id":"4","progress":0.10255474119440312,"total":331,"current":106}
+{"_e":"metro:bundling:progress","_t":1795100227221,"id":"4","progress":0.2627806579319446,"total":515,"current":264}
+{"_e":"metro:bundling:progress","_t":1795100227322,"id":"4","progress":0.34194302078370004,"total":643,"current":376}
+{"_e":"metro:bundling:progress","_t":1795100227423,"id":"4","progress":0.38132047824332643,"total":868,"current":536}
+{"_e":"metro:bundling:progress","_t":1795100227523,"id":"4","progress":0.5368410188710487,"total":939,"current":688}
+{"_e":"metro:bundling:progress","_t":1795100227623,"id":"4","progress":0.7793716082753397,"total":1007,"current":889}
+{"_e":"metro:bundling:progress","_t":1795100227723,"id":"4","progress":0.8552385533942164,"total":1077,"current":996}
+{"_e":"metro:bundling:progress","_t":1795100227823,"id":"4","progress":0.946587418153292,"total":1182,"current":1150}
+{"_e":"metro:bundling:progress","_t":1795100227923,"id":"4","progress":0.9928698979591837,"total":1400,"current":1395}
+{"_e":"metro:bundling:done","_t":1795100227995,"id":"4","total":1400,"ms":1080.587103}
+{"_e":"metro:server_log","_t":1795103488756,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","sdk_gphone64_x86_64 - 17 - API 37","60"]}
+{"_e":"root:init","_t":1795116758048,"format":"v0-jsonl","version":"57.0.28"}
+{"_e":"env:mode","_t":1795116758051,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795116758054,"mode":"development","files":["../../../.env.local"],"env":{"EXPO_PUBLIC_SUPABASE_KEY":"sb_publishable_o1gzHfzE46zu54LgLBkArA_vKAeZy8L","EXPO_PUBLIC_SUPABASE_URL":"https://kddsqbfrnvpnqllrxtck.supabase.co"}}
+{"_e":"devserver:start","_t":1795116758846,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../src/app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795116759474,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1795116759764,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795116760471,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795116769112,"id":"5","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1795116769113,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795116769124,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795116769224,"id":"5","progress":0.01582215893358649,"total":159,"current":20}
+{"_e":"metro:bundling:progress","_t":1795116769333,"id":"5","progress":0.07726515369146797,"total":295,"current":82}
+{"_e":"metro:bundling:progress","_t":1795116769433,"id":"5","progress":0.2227487116778758,"total":428,"current":202}
+{"_e":"metro:bundling:progress","_t":1795116769533,"id":"5","progress":0.3048170342469645,"total":547,"current":302}
+{"_e":"metro:bundling:progress","_t":1795116769633,"id":"5","progress":0.3353619959901982,"total":670,"current":388}
+{"_e":"metro:bundling:progress","_t":1795116769733,"id":"5","progress":0.3597150207909005,"total":842,"current":505}
+{"_e":"metro:bundling:progress","_t":1795116769833,"id":"5","progress":0.5104308641975308,"total":900,"current":643}
+{"_e":"metro:bundling:progress","_t":1795116769933,"id":"5","progress":0.6557295741287424,"total":962,"current":779}
+{"_e":"metro:bundling:progress","_t":1795116770034,"id":"5","progress":0.7877875424529953,"total":1014,"current":900}
+{"_e":"metro:bundling:progress","_t":1795116770134,"id":"5","progress":0.8602734898633243,"total":1076,"current":998}
+{"_e":"metro:bundling:progress","_t":1795116770234,"id":"5","progress":0.9264472427873662,"total":1174,"current":1130}
+{"_e":"metro:bundling:progress","_t":1795116770334,"id":"5","progress":0.9264472427873662,"total":1301,"current":1232}
+{"_e":"metro:bundling:done","_t":1795116770457,"id":"5","total":1301,"ms":1344.394918}
+>>>>>>> Stashed changes

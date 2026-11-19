@@ -9,33 +9,67 @@ import {
   TextInput,
 } from "react-native";
 
-import { useState } from "react";
+import global from "@/style/global";
+
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginSchema, type LoginForm } from "@/schemas/login";
 
 export default function SignIn() {
-  const [passwordText, onChangePasswordText] = useState("");
-  const [userNameText, onChangeUserNameText] = useState("");
-  
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginForm>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      username: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (data: LoginForm) => {
+    // Authenticate the user here.
+  };
 
   return (
     <View style={[styles.main]}>
       <View style={styles.content}>
-        <Text style={styles.text}>Username</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeUserNameText}
-          value={userNameText}
-          placeholder=""
-        />
-        <Text style={styles.text}>Password</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangePasswordText}
-          value={passwordText}
-          secureTextEntry
-          placeholder=""
+        <Text style={global.text}>Username</Text>
+        <Controller
+          control={control}
+          name="username"
+          render={({ field }) => (
+            <TextInput
+              style={global.input}
+              value={field.value}
+              onChangeText={field.onChange}
+              onBlur={field.onBlur}
+            />
+          )}
         />
 
-        <Pressable style={styles.button}>
+        <Text style={global.error}>{errors.username?.message}</Text>
+
+        <Text style={global.text}>Password</Text>
+
+        <Controller
+          control={control}
+          name="password"
+          render={({ field }) => (
+            <TextInput
+              style={global.input}
+              value={field.value}
+              onChangeText={field.onChange}
+              onBlur={field.onBlur}
+              secureTextEntry
+            />
+          )}
+        />
+
+        <Text style={global.error}>{errors.password?.message}</Text>
+
+        <Pressable style={global.button} onPress={handleSubmit(onSubmit)}>
           <Text>Sign in</Text>
         </Pressable>
       </View>
@@ -52,28 +86,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-  },
-  sym: {
-    color: "white",
-  },
-  input: {
-    height: 40,
-    width: "40%",
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    backgroundColor: "white",
-    borderRadius: 30,
-  },
-  text: {
-    color: "white",
-  },
-  button: {
-    backgroundColor: "#B386C3",
-    height: 40,
-    margin: 12,
-    borderRadius: 30,
-    padding: 10,
-    borderWidth: 1,
   },
 });

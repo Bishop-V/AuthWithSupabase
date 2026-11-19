@@ -9,40 +9,83 @@ import {
   TextInput,
 } from "react-native";
 
-import { useState } from "react";
+import global from "@/style/global";
+
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { signUpSchema, type SignUpForm } from "../schemas/signUp";
 
 export default function SignUp() {
-  const [passwordText, onChangePasswordText] = useState("");
-  const [comfrimPasswordText, onChangecomfrimPasswordText] = useState("");
-  const [userNameText, onChangeUserNameText] = useState("");
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignUpForm>({
+    resolver: zodResolver(signUpSchema),
+    defaultValues: {
+      username: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
 
   return (
     <View style={[styles.main]}>
       <View style={styles.content}>
-        <Text style={styles.text}>Username</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeUserNameText}
-          value={userNameText}
-          placeholder=""
+        <Text style={global.text}>Username</Text>
+
+        <Controller
+          control={control}
+          name="username"
+          render={({ field }) => (
+            <TextInput
+              style={global.input}
+              onChangeText={field.onChange}
+              value={field.value}
+              onBlur={field.onBlur}
+            />
+          )}
         />
-        <Text style={styles.text}>Password</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangePasswordText}
-          value={passwordText}
-          secureTextEntry
-          placeholder=""
+
+        <Text style={global.error}>{errors.username?.message}</Text>
+
+        <Text style={global.text}>Password</Text>
+
+        <Controller
+          control={control}
+          name="password"
+          render={({ field }) => (
+            <TextInput
+              style={global.input}
+              onChangeText={field.onChange}
+              value={field.value}
+              onBlur={field.onBlur}
+              secureTextEntry
+            />
+          )}
         />
-        <Text style={styles.text}>Confirm Password</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangecomfrimPasswordText}
-          value={comfrimPasswordText}
-          secureTextEntry
-          placeholder=""
+
+        <Text style={global.error}>{errors.password?.message}</Text>
+
+        <Text style={global.text}>Confirm Password</Text>
+
+        <Controller
+          control={control}
+          name="confirmPassword"
+          render={({ field }) => (
+            <TextInput
+              style={global.input}
+              onChangeText={field.onChange}
+              value={field.value}
+              onBlur={field.onBlur}
+              secureTextEntry
+            />
+          )}
         />
-        <Pressable style={styles.button}>
+
+        <Text style={global.error}>{errors.confirmPassword?.message}</Text>
+
+        <Pressable style={global.button}>
           <Text>Sign up</Text>
         </Pressable>
       </View>
@@ -59,28 +102,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-  },
-  sym: {
-    color: "white",
-  },
-  input: {
-    height: 40,
-    width: "40%",
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    backgroundColor: "white",
-    borderRadius: 30,
-  },
-  text: {
-    color: "white",
-  },
-  button: {
-    backgroundColor: "#B386C3",
-    height: 40,
-    margin: 12,
-    borderRadius: 30,
-    padding: 10,
-    borderWidth: 1,
   },
 });
