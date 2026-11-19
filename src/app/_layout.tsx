@@ -18,6 +18,27 @@ export default function RootLayout() {
           headerRight: () => <HomeHeaderRight />,
         }}
       />
+      <Stack.Screen
+        name="signIn"
+        options={{
+          title: "Sign In",
+          headerRight: () => <HomeHeaderRight />,
+        }}
+      />
+      <Stack.Screen
+        name="signOut"
+        options={{
+          title: "Sign Out",
+          headerRight: () => <HomeHeaderRight />,
+        }}
+      />
+      <Stack.Screen
+        name="signUp"
+        options={{
+          title: "Sign Up",
+          headerRight: () => <HomeHeaderRight />,
+        }}
+      />
     </Stack>
   );
 }
