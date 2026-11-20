@@ -1,4 +1,4 @@
-import { Link, router, useRouter } from 'expo-router';
+import { Link, router, useRouter } from "expo-router";
 import {
   Text,
   View,
@@ -14,10 +14,9 @@ export default function Index() {
   return (
     <View style={[styles.main]}>
       <View style={styles.content}>
-        <Button title="sign in" onPress={() => router.push('/signIn')} />
-        <Button title="sign up" onPress={() => router.push('/signUp')} />
-        <Button title="sign out" onPress={() => router.push('/signOut')} />
-          <Button title="test" onPress={() => router.push('/app')} />
+        <Button title="sign in" onPress={() => router.push("/signIn")} />
+        <Button title="sign up" onPress={() => router.push("/signUp")} />
+        <Button title="sign out" onPress={() => router.push("/signOut")} />
       </View>
     </View>
   );

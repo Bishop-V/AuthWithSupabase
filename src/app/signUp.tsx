@@ -1,106 +1,72 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  Pressable,
-  Appearance,
-  useColorScheme,
-  TextInput,
-} from "react-native";
-
-import global from "@/style/global";
-
-import { Controller, useForm } from "react-hook-form";
+import { useState } from "react";
+import { Pressable, Text, TextInput, View } from "react-native";
+import { supabase } from "./../../utils/supabase";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signUpSchema, type SignUpForm } from "../schemas/signUp";
+import { Control, Controller, FieldPath, useForm } from "react-hook-form";
+import { router } from "expo-router";
+import global from "@/style/global";
+import { formSchema, type signUpFormType } from "@/schemas/signUp";
+import FormInput from "@/components/FormInput";
 
 export default function SignUp() {
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<SignUpForm>({
-    resolver: zodResolver(signUpSchema),
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
+  const { control, handleSubmit } = useForm<signUpFormType>({
+    resolver: zodResolver(formSchema),
+    mode: "onSubmit",
     defaultValues: {
-      username: "",
+      comfirmPass: "",
+      email: "",
       password: "",
-      confirmPassword: "",
     },
   });
 
+  // code should work being rate limited, I dont have perms to disable Confirm email for testing
+  async function onSubmit({ email, password }: signUpFormType) {
+    setLoading(true);
+    setError(null);
+    setNotice(null);
+
+    const { data, error } = await supabase.auth.signUp({ email, password });
+    console.log("signUp result:", { data, error });
+    setLoading(false);
+    if (error) {
+      setError(error.message);
+      return;
+    } else if (!data.session) {
+      setNotice("email already exists");
+      return;
+    }
+
+    router.push({
+      pathname: "/profile",
+    });
+  }
   return (
-    <View style={[styles.main]}>
-      <View style={styles.content}>
-        <Text style={global.text}>Username</Text>
-
-        <Controller
-          control={control}
-          name="username"
-          render={({ field }) => (
-            <TextInput
-              style={global.input}
-              onChangeText={field.onChange}
-              value={field.value}
-              onBlur={field.onBlur}
-            />
-          )}
-        />
-
-        <Text style={global.error}>{errors.username?.message}</Text>
-
-        <Text style={global.text}>Password</Text>
-
-        <Controller
+    <View style={global.card}>
+      <View style={global.viewBox}>
+        <FormInput control={control} name="email" placeholder="email" />
+        <FormInput
           control={control}
           name="password"
-          render={({ field }) => (
-            <TextInput
-              style={global.input}
-              onChangeText={field.onChange}
-              value={field.value}
-              onBlur={field.onBlur}
-              secureTextEntry
-            />
-          )}
+          placeholder="Password"
+          secure
         />
-
-        <Text style={global.error}>{errors.password?.message}</Text>
-
-        <Text style={global.text}>Confirm Password</Text>
-
-        <Controller
+        <FormInput
           control={control}
-          name="confirmPassword"
-          render={({ field }) => (
-            <TextInput
-              style={global.input}
-              onChangeText={field.onChange}
-              value={field.value}
-              onBlur={field.onBlur}
-              secureTextEntry
-            />
-          )}
+          name="comfirmPass"
+          placeholder="confirm Password"
+          secure
         />
-
-        <Text style={global.error}>{errors.confirmPassword?.message}</Text>
-
-        <Pressable style={global.button}>
-          <Text>Sign up</Text>
+        <Pressable
+          onPress={handleSubmit(onSubmit)}
+          disabled={loading}
+          style={global.signUpButton}
+        >
+          <Text>Sign Up</Text>
         </Pressable>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  main: {
-    backgroundColor: "black",
-    flex: 1,
-  },
-  content: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-  },
-});

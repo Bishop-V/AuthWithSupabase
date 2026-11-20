@@ -1,13 +1,14 @@
 import { z } from "zod";
 
-export const signUpSchema = z.object({
-  username: z
-    .string()
-    .trim()
-    .min(2, "Min 2 characters.")
-    .max(30, "Max 30 characters"),
-  password: z.string().min(8, "Min 8 characters."),
-  confirmPassword: z.string().min(8, "Min 8 characters."),
-});
+export const formSchema = z
+  .object({
+    email: z.email("Please input email").trim(),
+    password: z.string().min(6, "Must be 6 characters"),
+    comfirmPass: z.string(),
+  })
+  .refine((data) => data.password === data.comfirmPass, {
+    message: "Passwords don't match",
+    path: ["comfirmPass"],
+  });
 
-export type SignUpForm = z.infer<typeof signUpSchema>;
+export type signUpFormType = z.infer<typeof formSchema>;
