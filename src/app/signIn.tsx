@@ -1,21 +1,16 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  Pressable,
-  Appearance,
-  useColorScheme,
-  TextInput,
-} from "react-native";
-
-import global from "@/style/global";
-
+import { useState } from "react";
+import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Link } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { supabase } from "./../../utils/supabase";
+import global from "@/style/global";
 import { loginSchema, type LoginForm } from "@/schemas/login";
 
 export default function SignIn() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const {
     control,
     handleSubmit,
@@ -23,36 +18,49 @@ export default function SignIn() {
   } = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
 
-  const onSubmit = (data: LoginForm) => {
-    // Authenticate the user here.
+  const onSubmit = async ({ email, password }: LoginForm) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) setError(error.message);
+    } catch {
+      setError("Can't reach the server. Check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <View style={[styles.main]}>
+    <View style={styles.main}>
       <View style={styles.content}>
-        <Text style={global.text}>Username</Text>
+        {error && <Text style={{ color: "red" }}>{error}</Text>}
+
+        <Text style={global.text}>Email</Text>
         <Controller
           control={control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <TextInput
               style={global.input}
               value={field.value}
               onChangeText={field.onChange}
               onBlur={field.onBlur}
+              keyboardType="email-address"
+              autoCapitalize="none"
+              autoComplete="email"
             />
           )}
         />
-
-        <Text style={global.error}>{errors.username?.message}</Text>
+        <Text style={global.error}>{errors.email?.message}</Text>
 
         <Text style={global.text}>Password</Text>
-
         <Controller
           control={control}
           name="password"
@@ -63,15 +71,19 @@ export default function SignIn() {
               onChangeText={field.onChange}
               onBlur={field.onBlur}
               secureTextEntry
+              autoCapitalize="none"
             />
           )}
         />
-
         <Text style={global.error}>{errors.password?.message}</Text>
 
-        <Pressable style={global.button} onPress={handleSubmit(onSubmit)}>
-          <Text>Sign in</Text>
+        <Pressable style={global.button} onPress={handleSubmit(onSubmit)} disabled={loading}>
+          {loading ? <ActivityIndicator /> : <Text>Sign in</Text>}
         </Pressable>
+
+        <Link href="/signUp" style={global.text}>
+          Sign up
+        </Link>
       </View>
     </View>
   );
