@@ -1,12 +1,19 @@
 import { StyleSheet } from "react-native";
 
 const global = StyleSheet.create({
+  page: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "#161616",
+  },
   card: {
     borderWidth: 1,
-    borderColor: "#999",
+    borderColor: "#393939",
+    backgroundColor: "#242424",
     borderRadius: 8,
     padding: 16,
     gap: 4,
+    margin: 20,
   },
   badge: {
     alignSelf: "flex-start",
@@ -52,16 +59,17 @@ const global = StyleSheet.create({
   formBox: {
     borderWidth: 1,
     borderRadius: 6,
-    borderColor: "black",
+    borderColor: "white",
+    color: "white",
     padding: 10,
   },
   signUpButton: {
-    backgroundColor: "#5a1f69",
+    backgroundColor: "#B386C3",
     padding: 10,
     borderRadius: 5,
     width: 150,
   },
-  viewBox: { flexDirection: "column", gap: 3 },
+  viewBox: { flexDirection: "column", gap: 20 },
 });
 
 export default global;

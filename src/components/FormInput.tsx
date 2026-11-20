@@ -10,7 +10,12 @@ type signUpFormProps = {
   secure?: boolean;
 };
 
-export default function FormInput({ control, name, secure }: signUpFormProps) {
+export default function FormInput({
+  control,
+  name,
+  secure,
+  placeholder,
+}: signUpFormProps) {
   return (
     <View>
       <Controller
@@ -26,7 +31,8 @@ export default function FormInput({ control, name, secure }: signUpFormProps) {
               onChangeText={onChange}
               onBlur={onBlur}
               value={value}
-              placeholder={name}
+              placeholder={placeholder}
+              placeholderTextColor="#999"
               secureTextEntry={secure}
             />
             {error && <Text>{error.message}</Text>}

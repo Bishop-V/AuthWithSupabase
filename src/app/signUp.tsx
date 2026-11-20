@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { supabase } from "./../../utils/supabase";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Control, Controller, FieldPath, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { router } from "expo-router";
 import global from "@/style/global";
 import { formSchema, type signUpFormType } from "@/schemas/signUp";
@@ -12,11 +12,11 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
-  const { control, handleSubmit } = useForm<signUpFormType>({
+  const { control, handleSubmit } = useForm({
     resolver: zodResolver(formSchema),
     mode: "onSubmit",
     defaultValues: {
-      comfirmPass: "",
+      confirmPass: "",
       email: "",
       password: "",
     },
@@ -35,7 +35,7 @@ export default function SignUp() {
       setError(error.message);
       return;
     } else if (!data.session) {
-      setNotice("email already exists");
+      setNotice("Email already exists");
       return;
     }
 
@@ -44,28 +44,30 @@ export default function SignUp() {
     });
   }
   return (
-    <View style={global.card}>
-      <View style={global.viewBox}>
-        <FormInput control={control} name="email" placeholder="email" />
-        <FormInput
-          control={control}
-          name="password"
-          placeholder="Password"
-          secure
-        />
-        <FormInput
-          control={control}
-          name="comfirmPass"
-          placeholder="confirm Password"
-          secure
-        />
-        <Pressable
-          onPress={handleSubmit(onSubmit)}
-          disabled={loading}
-          style={global.signUpButton}
-        >
-          <Text>Sign Up</Text>
-        </Pressable>
+    <View style={global.page}>
+      <View style={global.card}>
+        <View style={global.viewBox}>
+          <FormInput control={control} name="email" placeholder="Email" />
+          <FormInput
+            control={control}
+            name="password"
+            placeholder="Password"
+            secure
+          />
+          <FormInput
+            control={control}
+            name="confirmPass"
+            placeholder="Confirm password"
+            secure
+          />
+          <Pressable
+            onPress={handleSubmit(onSubmit)}
+            disabled={loading}
+            style={global.signUpButton}
+          >
+            <Text>Sign Up</Text>
+          </Pressable>
+        </View>
       </View>
     </View>
   );
