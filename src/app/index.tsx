@@ -9,6 +9,7 @@ import {
   useColorScheme,
   Button,
 } from "react-native";
+import { supabase } from "./../../utils/supabase";
 
 export default function Index() {
   return (
@@ -16,7 +17,7 @@ export default function Index() {
       <View style={styles.content}>
         <Button title="sign in" onPress={() => router.push("/signIn")} />
         <Button title="sign up" onPress={() => router.push("/signUp")} />
-        <Button title="sign out" onPress={() => router.push("/signOut")} />
+        <Button title="sign out" onPress={() => supabase.auth.signOut()} />
       </View>
     </View>
   );

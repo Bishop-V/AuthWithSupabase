@@ -70,6 +70,9 @@ const global = StyleSheet.create({
     width: 150,
   },
   viewBox: { flexDirection: "column", gap: 20 },
+  headerStyle: {
+  backgroundColor: "black",
+},
 });
 
 export default global;

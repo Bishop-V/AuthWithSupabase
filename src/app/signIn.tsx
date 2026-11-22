@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ActivityIndicator, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Pressable, Text, TextInput, View } from "react-native";
 import { Link } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -38,9 +38,9 @@ export default function SignIn() {
   };
 
   return (
-    <View style={styles.main}>
-      <View style={styles.content}>
-        {error && <Text style={{ color: "red" }}>{error}</Text>}
+    <View style={global.main}>
+      <View style={global.content}>
+        {error && <Text style={global.error}>{error}</Text>}
 
         <Text style={global.text}>Email</Text>
         <Controller
@@ -88,15 +88,3 @@ export default function SignIn() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  main: {
-    backgroundColor: "black",
-    flex: 1,
-  },
-  content: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-  },
-});
