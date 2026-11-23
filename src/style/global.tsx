@@ -16,7 +16,6 @@ const global = StyleSheet.create({
     margin: 20,
   },
   badge: {
-    alignSelf: "flex-start",
     fontSize: 12,
     fontWeight: "bold",
     color: "crimson",
@@ -24,11 +23,12 @@ const global = StyleSheet.create({
   label: { 
     fontSize: 16, 
     color: "#bebebe", 
-    marginTop: 6,
-    marginBottom: 2,
+    paddingVertical: 2,
   },
   value: { 
-    fontSize: 18 
+    fontSize: 18,
+    color: "#B386C3",
+    marginBottom: 6,
   },
   error: { 
     color: "crimson" 
@@ -79,7 +79,9 @@ const global = StyleSheet.create({
     backgroundColor: "#B386C3",
     padding: 10,
     borderRadius: 5,
-    width: 150,
+    width: 100,
+    marginTop: 8,
+    alignItems: "center",
   },
   viewBox: { 
     flexDirection: "column", 
@@ -93,10 +95,14 @@ const global = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-    headerText: {
+  headerText: {
     color: "#B386C3",
     fontWeight: "600",
     marginRight: 10,
+  },
+  link: {
+    color: "white",
+    paddingBottom: 3,
   },
 });
 

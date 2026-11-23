@@ -16,10 +16,10 @@ export default function Index() {
           </Link>
         ) : (
           <>
-            <Link href="/signIn" style={global.text}>
+            <Link href="/signIn" style={global.link}>
               Sign in
             </Link>
-            <Link href="/signUp" style={global.text}>
+            <Link href="/signUp" style={global.link}>
               Sign up
             </Link>
           </>

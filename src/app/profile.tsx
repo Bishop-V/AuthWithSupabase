@@ -55,10 +55,9 @@ export default function Profile() {
         {error && <Text style={global.error}>Error: {error}</Text>}
 
         {profile ? (
-          <>
-            <Text style={global.label}>Email</Text>
-            <Text style={global.value}>{profile.email}</Text>
-          </>
+          <View>
+            <Text style={global.label}>Email: {profile.email}</Text>
+          </View>
         ) : (
           !error && <Text style={global.label}>No profile found for this account.</Text>
         )}
