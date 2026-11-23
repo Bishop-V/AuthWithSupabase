@@ -3,7 +3,7 @@ import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { supabase } from "../../utils/supabase";
 import global from "@/style/global";
 
-export default function SignOut() {
+export default function signOut() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
