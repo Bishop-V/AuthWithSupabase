@@ -30,7 +30,10 @@ export default function SignIn() {
     setError(null);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
       if (error) setError(error.message);
     } catch {
       setError("Can't reach the server. Check your connection and try again.");
@@ -43,32 +46,38 @@ export default function SignIn() {
   };
 
   return (
-    <View style={global.main}>
-      <View style={global.content}>
-        {error && <Text style={global.error}>{error}</Text>}
+    <View style={global.page}>
+      <View style={global.card}>
+        <View style={global.viewBox}>
+          {error && <Text style={global.error}>{error}</Text>}
 
-        <SignInInput
-          label="Email"
-          control={control} 
-          name="email" 
-          placeholder="Email" 
-        />
-        
-        <SignInInput
-          label="Password"
-          control={control}
-          name="password"
-          placeholder="Password"
-          secure
-        />
+          <SignInInput
+            label="Email"
+            control={control}
+            name="email"
+            placeholder="Email"
+          />
 
-        <Pressable style={global.button} onPress={handleSubmit(onSubmit)} disabled={loading}>
-          {loading ? <ActivityIndicator /> : <Text>Sign in</Text>}
-        </Pressable>
+          <SignInInput
+            label="Password"
+            control={control}
+            name="password"
+            placeholder="Password"
+            secure
+          />
 
-        <Link href="/signUp" style={global.text}>
-          Sign up
-        </Link>
+          <Pressable
+            style={global.signInButton}
+            onPress={handleSubmit(onSubmit)}
+            disabled={loading}
+          >
+            {loading ? <ActivityIndicator /> : <Text>Sign in</Text>}
+          </Pressable>
+
+          <Link href="/signUp" style={[global.text, global.signUpRedirect]}>
+            Sign up
+          </Link>
+        </View>
       </View>
     </View>
   );

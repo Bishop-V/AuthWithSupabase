@@ -20,18 +20,18 @@ const global = StyleSheet.create({
     fontWeight: "bold",
     color: "crimson",
   },
-  label: { 
-    fontSize: 16, 
-    color: "#bebebe", 
+  label: {
+    fontSize: 16,
+    color: "#bebebe",
     paddingVertical: 2,
   },
-  value: { 
+  value: {
     fontSize: 18,
     color: "#B386C3",
     marginBottom: 6,
   },
-  error: { 
-    color: "crimson" 
+  error: {
+    color: "crimson",
   },
   main: {
     backgroundColor: "black",
@@ -71,6 +71,8 @@ const global = StyleSheet.create({
     borderColor: "white",
     color: "white",
     padding: 10,
+    width: 200,
+    marginBottom: 10,
   },
   formBoxError: {
     borderColor: "crimson",
@@ -83,12 +85,26 @@ const global = StyleSheet.create({
     marginTop: 8,
     alignItems: "center",
   },
-  viewBox: { 
-    flexDirection: "column", 
-    gap: 20 
+  signInButton: {
+    backgroundColor: "#B386C3",
+    padding: 10,
+    borderRadius: 5,
+    width: 100,
+    marginTop: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+  signUpRedirect: {
+    marginBottom: 10,
+  },
+  viewBox: {
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 20,
   },
   headerStyle: {
-    backgroundColor: "black",
+    backgroundColor: "#242424",
   },
   container: {
     flex: 1,
@@ -103,6 +119,15 @@ const global = StyleSheet.create({
   link: {
     color: "white",
     paddingBottom: 3,
+  },
+  homePageLinks: {
+    gap: 12,
+    alignItems: "center",
+  },
+  homePageBox: {
+    alignItems: "center",
+    gap: 8,
+    padding: 5,
   },
 });
 
