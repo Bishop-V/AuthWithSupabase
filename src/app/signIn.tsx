@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { supabase } from "./../../utils/supabase";
 import { router } from "expo-router";
 import global from "@/style/global";
-import { signinSchema, type SigninForm } from "@/schemas/login";
+import { signinSchema, type SigninForm } from "@/schemas/signIn";
 
 export default function SignIn() {
   const [loading, setLoading] = useState(false);
