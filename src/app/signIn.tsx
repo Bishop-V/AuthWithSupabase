@@ -34,15 +34,18 @@ export default function SignIn() {
         email,
         password,
       });
-      if (error) setError(error.message);
+      if (error) {
+        setError(error.message);
+        return;
+      }
+      router.push({
+        pathname: "/profile",
+      });
     } catch {
       setError("Can't reach the server. Check your connection and try again.");
     } finally {
       setLoading(false);
     }
-    router.push({
-      pathname: "/profile",
-    });
   };
 
   return (

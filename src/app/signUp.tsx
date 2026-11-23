@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { supabase } from "./../../utils/supabase";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm , Controller} from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { router } from "expo-router";
 import global from "@/style/global";
 import { formSchema, type signUpFormType } from "@/schemas/signUp";
 import FormInput from "@/components/FormInput";
+import { ActivityIndicator } from "react-native";
 
 export default function SignUp() {
   const [loading, setLoading] = useState(false);
@@ -28,30 +29,38 @@ export default function SignUp() {
     setError(null);
     setNotice(null);
 
-    const { data, error } = await supabase.auth.signUp({ email, password });
-    console.log("signUp result:", { data, error });
-    setLoading(false);
-    if (error) {
-      setError(error.message);
-      return;
-    } else if (!data.session) {
-      setNotice("Email already exists");
-      return;
-    }
+    try {
+      const { data, error } = await supabase.auth.signUp({ email, password });
+      console.log("signUp result:", { data, error });
+      setLoading(false);
+      if (error) {
+        setError(error.message);
+        return;
+      } else if (!data.session) {
+        setNotice("Email already exists");
+        return;
+      }
 
-    router.push({
-      pathname: "/profile",
-    });
+      router.push({
+        pathname: "/profile",
+      });
+    } catch {
+      setError("Can't reach server. Check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   }
   return (
     <View style={global.page}>
       <View style={global.card}>
+        {error && <Text style={global.error}>{error}</Text>}
+        {notice && <Text style={global.label}>{notice}</Text>}
         <View style={global.viewBox}>
           <FormInput
             label="Email"
-            control={control} 
-            name="email" 
-            placeholder="Email" 
+            control={control}
+            name="email"
+            placeholder="Email"
           />
           <FormInput
             label="Password"
@@ -72,7 +81,11 @@ export default function SignUp() {
             disabled={loading}
             style={global.signUpButton}
           >
-            <Text>Sign Up</Text>
+            {loading ? (
+              <ActivityIndicator color="#161616" />
+            ) : (
+              <Text>Sign Up</Text>
+            )}
           </Pressable>
         </View>
       </View>
