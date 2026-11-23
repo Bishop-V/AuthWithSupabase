@@ -21,9 +21,17 @@ const global = StyleSheet.create({
     fontWeight: "bold",
     color: "crimson",
   },
-  label: { fontSize: 12, color: "#666", marginTop: 8 },
-  value: { fontSize: 18 },
-  error: { color: "crimson" },
+  label: { 
+    fontSize: 12, 
+    color: "#666", 
+    marginTop: 8 
+  },
+  value: { 
+    fontSize: 18 
+  },
+  error: { 
+    color: "crimson" 
+  },
   main: {
     backgroundColor: "black",
     flex: 1,
@@ -63,16 +71,27 @@ const global = StyleSheet.create({
     color: "white",
     padding: 10,
   },
+  formBoxError: {
+    borderColor: "crimson",
+  },
   signUpButton: {
     backgroundColor: "#B386C3",
     padding: 10,
     borderRadius: 5,
     width: 150,
   },
-  viewBox: { flexDirection: "column", gap: 20 },
+  viewBox: { 
+    flexDirection: "column", 
+    gap: 20 
+  },
   headerStyle: {
-  backgroundColor: "black",
-},
+    backgroundColor: "black",
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
 export default global;

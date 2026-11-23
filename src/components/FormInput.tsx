@@ -27,7 +27,7 @@ export default function FormInput({
         }) => (
           <>
             <TextInput
-              style={global.formBox}
+              style={[global.formBox, error && global.formBoxError]}
               onChangeText={onChange}
               onBlur={onBlur}
               value={value}
@@ -35,7 +35,14 @@ export default function FormInput({
               placeholderTextColor="#999"
               secureTextEntry={secure}
             />
-            {error && <Text>{error.message}</Text>}
+            {
+              error && 
+              <Text
+                style={global.error} 
+              >
+                {error.message}
+              </Text>
+            }
           </>
         )}
       />

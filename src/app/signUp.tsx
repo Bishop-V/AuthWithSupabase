@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { supabase } from "./../../utils/supabase";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm , Controller} from "react-hook-form";
 import { router } from "expo-router";
 import global from "@/style/global";
 import { formSchema, type signUpFormType } from "@/schemas/signUp";
@@ -47,7 +47,11 @@ export default function SignUp() {
     <View style={global.page}>
       <View style={global.card}>
         <View style={global.viewBox}>
-          <FormInput control={control} name="email" placeholder="Email" />
+          <FormInput 
+            control={control} 
+            name="email" 
+            placeholder="Email" 
+          />
           <FormInput
             control={control}
             name="password"

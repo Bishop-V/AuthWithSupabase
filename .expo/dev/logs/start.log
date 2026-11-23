@@ -2004,3 +2004,86 @@
 {"_e":"metro:bundling:done","_t":1795396047113,"id":"4","total":685,"ms":201.4381}
 {"_e":"metro:client_log","_t":1795396047881,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
 {"_e":"metro:client_log","_t":1795396047881,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"root:init","_t":1795397290118,"format":"v0-jsonl","version":"57.0.28"}
+{"_e":"env:mode","_t":1795397290119,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795397290121,"mode":"development","files":["../..\\..\\.env"],"env":{"EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY":"sb_publishable_o1gzHfzE46zu54LgLBkArA_vKAeZy8L","EXPO_PUBLIC_SUPABASE_URL":"https://kddsqbfrnvpnqllrxtck.supabase.co"}}
+{"_e":"devserver:start","_t":1795397290560,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\src\\app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795397290864,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1795397291051,"plugins":[{"packageName":"expo-sqlite","bannerTitle":"expo-sqlite","cliBanner":false,"webpageEndpoint":"/_expo/plugins/expo-sqlite"}]}
+{"_e":"metro:instantiate","_t":1795397293198,"atlas":false,"workers":14,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795397295928,"id":"2","platform":"web","environment":null,"entry":"node_modules\\expo-router\\entry.js"}
+{"_e":"metro:bundling:progress","_t":1795397295930,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:started","_t":1795397295932,"id":"3","platform":"web","environment":"node","entry":"node_modules\\expo\\node_modules\\@expo\\cli\\node_modules\\@expo\\router-server\\node\\render.js"}
+{"_e":"metro:bundling:progress","_t":1795397295933,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397295933,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397295939,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397295939,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397296045,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397296045,"id":"3","progress":0.04938271604938271,"total":27,"current":6}
+{"_e":"metro:bundling:progress","_t":1795397296210,"id":"2","progress":0.07438016528925619,"total":44,"current":12}
+{"_e":"metro:bundling:progress","_t":1795397296211,"id":"3","progress":0.04938271604938271,"total":27,"current":6}
+{"_e":"metro:bundling:progress","_t":1795397296319,"id":"2","progress":0.07438016528925619,"total":44,"current":12}
+{"_e":"metro:bundling:progress","_t":1795397296319,"id":"3","progress":0.088134765625,"total":128,"current":38}
+{"_e":"metro:bundling:progress","_t":1795397296420,"id":"2","progress":0.07438016528925619,"total":176,"current":44}
+{"_e":"metro:bundling:progress","_t":1795397296420,"id":"3","progress":0.088134765625,"total":128,"current":38}
+{"_e":"metro:bundling:progress","_t":1795397296545,"id":"2","progress":0.16365702479338842,"total":220,"current":89}
+{"_e":"metro:bundling:progress","_t":1795397296546,"id":"3","progress":0.088134765625,"total":128,"current":38}
+{"_e":"metro:bundling:progress","_t":1795397296654,"id":"2","progress":0.16703213610586012,"total":230,"current":94}
+{"_e":"metro:bundling:progress","_t":1795397296654,"id":"3","progress":0.088134765625,"total":128,"current":38}
+{"_e":"metro:bundling:progress","_t":1795397296754,"id":"2","progress":0.16703213610586012,"total":230,"current":94}
+{"_e":"metro:bundling:progress","_t":1795397296754,"id":"3","progress":0.17503123698458978,"total":196,"current":82}
+{"_e":"metro:bundling:progress","_t":1795397296854,"id":"2","progress":0.21475312314098752,"total":287,"current":133}
+{"_e":"metro:bundling:progress","_t":1795397296854,"id":"3","progress":0.17503123698458978,"total":196,"current":82}
+{"_e":"metro:bundling:progress","_t":1795397296957,"id":"2","progress":0.3131641418177728,"total":411,"current":230}
+{"_e":"metro:bundling:progress","_t":1795397296957,"id":"3","progress":0.17503123698458978,"total":196,"current":82}
+{"_e":"metro:bundling:progress","_t":1795397297057,"id":"2","progress":0.3131641418177728,"total":411,"current":230}
+{"_e":"metro:bundling:progress","_t":1795397297057,"id":"3","progress":0.2773777777777777,"total":450,"current":237}
+{"_e":"metro:bundling:progress","_t":1795397297157,"id":"2","progress":0.3131641418177728,"total":411,"current":230}
+{"_e":"metro:bundling:progress","_t":1795397297157,"id":"3","progress":0.35491172476233585,"total":517,"current":308}
+{"_e":"metro:bundling:progress","_t":1795397297257,"id":"2","progress":0.3751221472115714,"total":449,"current":275}
+{"_e":"metro:bundling:progress","_t":1795397297257,"id":"3","progress":0.35491172476233585,"total":517,"current":308}
+{"_e":"metro:bundling:progress","_t":1795397297357,"id":"2","progress":0.47983258436358706,"total":589,"current":408}
+{"_e":"metro:bundling:progress","_t":1795397297357,"id":"3","progress":0.35491172476233585,"total":517,"current":308}
+{"_e":"metro:bundling:progress","_t":1795397297457,"id":"2","progress":0.47983258436358706,"total":589,"current":408}
+{"_e":"metro:bundling:progress","_t":1795397297457,"id":"3","progress":0.5257866023151531,"total":673,"current":488}
+{"_e":"metro:bundling:progress","_t":1795397297559,"id":"2","progress":0.7067221453390776,"total":659,"current":554}
+{"_e":"metro:bundling:progress","_t":1795397297559,"id":"3","progress":0.5257866023151531,"total":673,"current":488}
+{"_e":"metro:bundling:progress","_t":1795397297659,"id":"2","progress":0.7067221453390776,"total":659,"current":554}
+{"_e":"metro:bundling:progress","_t":1795397297659,"id":"3","progress":0.6591096290785419,"total":776,"current":630}
+{"_e":"metro:bundling:progress","_t":1795397297760,"id":"2","progress":0.8145827348463086,"total":708,"current":639}
+{"_e":"metro:bundling:progress","_t":1795397297760,"id":"3","progress":0.6591096290785419,"total":776,"current":630}
+{"_e":"metro:bundling:progress","_t":1795397297889,"id":"2","progress":0.8145827348463086,"total":708,"current":639}
+{"_e":"metro:bundling:progress","_t":1795397297889,"id":"3","progress":0.8402777777777777,"total":900,"current":825}
+{"_e":"metro:bundling:progress","_t":1795397297988,"id":"2","progress":0.8145827348463086,"total":883,"current":738}
+{"_e":"metro:bundling:progress","_t":1795397297988,"id":"3","progress":0.8402777777777777,"total":900,"current":825}
+{"_e":"metro:bundling:progress","_t":1795397298092,"id":"2","progress":0.8145827348463086,"total":883,"current":738}
+{"_e":"metro:bundling:progress","_t":1795397298092,"id":"3","progress":0.9395559258896186,"total":1010,"current":979}
+{"_e":"metro:bundling:progress","_t":1795397298191,"id":"2","progress":0.8145827348463086,"total":946,"current":840}
+{"_e":"metro:bundling:progress","_t":1795397298191,"id":"3","progress":0.9395559258896186,"total":1010,"current":979}
+{"_e":"metro:bundling:progress","_t":1795397298291,"id":"2","progress":0.9605950347763669,"total":1005,"current":985}
+{"_e":"metro:bundling:progress","_t":1795397298291,"id":"3","progress":0.9395559258896186,"total":1010,"current":979}
+{"_e":"metro:bundling:progress","_t":1795397298393,"id":"2","progress":0.9960937537325769,"total":1023,"current":1021}
+{"_e":"metro:bundling:progress","_t":1795397298393,"id":"3","progress":0.9395559258896186,"total":1010,"current":979}
+{"_e":"metro:bundling:progress","_t":1795397298497,"id":"2","progress":0.9980459213265949,"total":1023,"current":1022}
+{"_e":"metro:bundling:progress","_t":1795397298497,"id":"3","progress":0.9395559258896186,"total":1010,"current":979}
+{"_e":"metro:bundling:progress","_t":1795397299053,"id":"2","progress":0.9980459213265949,"total":1023,"current":1022}
+{"_e":"metro:bundling:progress","_t":1795397299053,"id":"3","progress":0.999,"total":1076,"current":1076}
+{"_e":"metro:bundling:done","_t":1795397299209,"id":"3","total":1076,"ms":3276.5689}
+{"_e":"metro:bundling:progress","_t":1795397299209,"id":"2","progress":0.9980459213265949,"total":1023,"current":1022}
+{"_e":"metro:bundling:progress","_t":1795397299928,"id":"2","progress":0.999,"total":1023,"current":1023}
+{"_e":"metro:bundling:done","_t":1795397300047,"id":"2","total":1023,"ms":4118.6417}
+{"_e":"metro:bundling:started","_t":1795397300108,"id":"4","platform":"web","environment":null,"entry":"node_modules\\expo-router\\entry.js"}
+{"_e":"metro:bundling:progress","_t":1795397300108,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397300110,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795397300210,"id":"4","progress":0.21556122448979592,"total":308,"current":143}
+{"_e":"metro:bundling:progress","_t":1795397300317,"id":"4","progress":0.4306640625,"total":544,"current":357}
+{"_e":"metro:bundling:progress","_t":1795397300417,"id":"4","progress":0.782178575557868,"total":744,"current":658}
+{"_e":"metro:bundling:progress","_t":1795397300518,"id":"4","progress":0.782178575557868,"total":946,"current":798}
+{"_e":"metro:bundling:progress","_t":1795397300618,"id":"4","progress":0.9960937537325769,"total":1023,"current":1021}
+{"_e":"metro:bundling:done","_t":1795397300707,"id":"4","total":1023,"ms":598.843}
+{"_e":"metro:client_log","_t":1795397301110,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795397301111,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:failed","_t":1795397428976,"id":null,"message":"Unable to resolve \"@/components/HomeHeaderRight\" from \"src\\app\\_layout.tsx\"\n  2 | import { AuthProvider, useAuth } from \"./../../context/AuthProvider\";\n  3 | import { Stack } from \"expo-router\";\n> 4 | import HomeHeaderRight from \"@/components/HomeHeaderRight\";\n    |                              ^\n  5 | import global from \"@/style/global\";\n  6 |\n  7 | function RootNavigator() {","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\app\\_layout.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"@/components/HomeHeaderRight\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\app\u001b[2m (require.context)\u001b[22m\n","filename":null,"targetModuleName":"@/components/HomeHeaderRight","originModulePath":"src\\app\\_layout.tsx"}
+{"_e":"metro:client_log","_t":1795397428982,"level":"error","data":["[UnableToResolveError: Unable to resolve module @/components/HomeHeaderRight from C:\\Users\\IrisA\\Documents\\Semester-3\\Mobile App Dev\\supabase assignment\\AuthWithSupabase\\src\\app\\_layout.tsx: @/components/HomeHeaderRight could not be found within the project or in these directories:\n  node_modules\n  ..\\..\\..\\..\\..\\node_modules\n  2 | import { AuthProvider, useAuth } from \"./../../context/AuthProvider\";\n  3 | import { Stack } from \"expo-router\";\n> 4 | import HomeHeaderRight from \"@/components/HomeHeaderRight\";\n    |                              ^\n  5 | import global from \"@/style/global\";\n  6 |\n  7 | function RootNavigator() {]"]}
+{"_e":"metro:bundling:failed","_t":1795397429166,"id":null,"message":"Unable to resolve \"@/components/HomeHeaderRight\" from \"src\\app\\_layout.tsx\"\n  2 | import { AuthProvider, useAuth } from \"./../../context/AuthProvider\";\n  3 | import { Stack } from \"expo-router\";\n> 4 | import HomeHeaderRight from \"@/components/HomeHeaderRight\";\n    |                              ^\n  5 | import global from \"@/style/global\";\n  6 |\n  7 | function RootNavigator() {","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39msrc\\app\\_layout.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"@/components/HomeHeaderRight\"\u001b[39m\n\n\u001b[90m \u001b[39msrc\\app\u001b[2m (require.context)\u001b[22m\n","filename":null,"targetModuleName":"@/components/HomeHeaderRight","originModulePath":"src\\app\\_layout.tsx"}
+{"_e":"metro:client_log","_t":1795397429170,"level":"error","data":["[UnableToResolveError: Unable to resolve module @/components/HomeHeaderRight from C:\\Users\\IrisA\\Documents\\Semester-3\\Mobile App Dev\\supabase assignment\\AuthWithSupabase\\src\\app\\_layout.tsx: @/components/HomeHeaderRight could not be found within the project or in these directories:\n  node_modules\n  ..\\..\\..\\..\\..\\node_modules\n  2 | import { AuthProvider, useAuth } from \"./../../context/AuthProvider\";\n  3 | import { Stack } from \"expo-router\";\n> 4 | import HomeHeaderRight from \"@/components/HomeHeaderRight\";\n    |                              ^\n  5 | import global from \"@/style/global\";\n  6 |\n  7 | function RootNavigator() {]"]}
