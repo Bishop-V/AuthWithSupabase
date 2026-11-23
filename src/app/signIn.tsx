@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { supabase } from "./../../utils/supabase";
 import { router } from "expo-router";
 import global from "@/style/global";
-import { loginSchema, type LoginForm } from "@/schemas/login";
+import { signinSchema, type SigninForm } from "@/schemas/login";
 
 export default function SignIn() {
   const [loading, setLoading] = useState(false);
@@ -16,15 +16,15 @@ export default function SignIn() {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>({
-    resolver: zodResolver(loginSchema),
+  } = useForm<SigninForm>({
+    resolver: zodResolver(signinSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const onSubmit = async ({ email, password }: LoginForm) => {
+  const onSubmit = async ({ email, password }: SigninForm) => {
     setLoading(true);
     setError(null);
 
