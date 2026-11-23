@@ -4,6 +4,7 @@ import { Link } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { supabase } from "./../../utils/supabase";
+import { router } from "expo-router";
 import global from "@/style/global";
 import { loginSchema, type LoginForm } from "@/schemas/login";
 
@@ -35,6 +36,9 @@ export default function SignIn() {
     } finally {
       setLoading(false);
     }
+    router.push({
+      pathname: "/profile",
+    });
   };
 
   return (

@@ -3,6 +3,7 @@ import { ActivityIndicator, Text, View } from "react-native";
 import { supabase } from "../../utils/supabase";
 import { useAuth } from "../../context/AuthProvider";
 import SignOut from "../components/SignOut";
+import global from "@/style/global";
 
 type ProfileData = {
   email: string;
@@ -59,41 +60,11 @@ export default function Profile() {
             <Text style={global.value}>{profile.email}</Text>
           </>
         ) : (
-<<<<<<< Updated upstream
           !error && <Text style={global.label}>No profile found for this account.</Text>
-=======
-          !error && (
-            <Text style={styles.label}>No profile found for this account.</Text>
-          )
->>>>>>> Stashed changes
         )}
 
         <SignOut />
       </View>
     </View>
   );
-<<<<<<< Updated upstream
 }
-=======
-}
-
-const styles = StyleSheet.create({
-  container: { flex: 1, padding: 24 },
-  card: {
-    borderWidth: 1,
-    borderColor: "#999",
-    borderRadius: 8,
-    padding: 16,
-    gap: 8,
-  },
-  badge: {
-    alignSelf: "flex-start",
-    fontSize: 12,
-    fontWeight: "bold",
-    color: "red",
-  },
-  label: { fontSize: 12, color: "#666" },
-  value: { fontSize: 18 },
-  error: { color: "red" },
-});
->>>>>>> Stashed changes
