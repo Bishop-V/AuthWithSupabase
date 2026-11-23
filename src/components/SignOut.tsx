@@ -20,7 +20,11 @@ export default function SignOut() {
   return (
     <View>
       {error && <Text style={{ color: "red" }}>{error}</Text>}
-      <Pressable onPress={handleSignOut} disabled={loading} style={global.signUpButton}>
+      <Pressable
+        onPress={handleSignOut}
+        disabled={loading}
+        style={global.signUpButton}
+      >
         {loading ? <ActivityIndicator /> : <Text>Sign Out</Text>}
       </Pressable>
     </View>
