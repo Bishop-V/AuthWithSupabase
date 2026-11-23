@@ -1,4 +1,4 @@
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, Text, View } from "react-native";
 import { AuthProvider, useAuth } from "./../../context/AuthProvider";
 import { Stack } from "expo-router";
 import global from "@/style/global";

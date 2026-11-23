@@ -1,39 +1,30 @@
-import { Link, router, useRouter } from "expo-router";
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  Pressable,
-  Appearance,
-  useColorScheme,
-  Button,
-} from "react-native";
-import { supabase } from "./../../utils/supabase";
+import { Link } from "expo-router";
+import { Text, View } from "react-native";
+import { useAuth } from "./../../context/AuthProvider";
+import global from "@/style/global";
 
 export default function Index() {
+  const { session } = useAuth();
+
   return (
-    <View style={[styles.main]}>
-      <View style={styles.content}>
-        <Button title="sign in" onPress={() => router.push("/signIn")} />
-        <Button title="sign up" onPress={() => router.push("/signUp")} />
-        <Button title="sign out" onPress={() => supabase.auth.signOut()} />
+    <View style={global.page}>
+      <View style={global.card}>
+        <Text style={global.value}>Home</Text>
+        {session ? (
+          <Link href="/profile" style={global.text}>
+            View your profile
+          </Link>
+        ) : (
+          <>
+            <Link href="/signIn" style={global.text}>
+              Sign in
+            </Link>
+            <Link href="/signUp" style={global.text}>
+              Sign up
+            </Link>
+          </>
+        )}
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  main: {
-    backgroundColor: "black",
-    flex: 1,
-  },
-  content: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-  },
-  sym: {
-    color: "white",
-  },
-});

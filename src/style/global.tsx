@@ -93,6 +93,11 @@ const global = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+    headerText: {
+    color: "#B386C3",
+    fontWeight: "600",
+    marginRight: 10,
+  },
 });
 
 export default global;
