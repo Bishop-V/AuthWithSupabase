@@ -1,7 +1,6 @@
 import { ActivityIndicator, View } from "react-native";
 import { AuthProvider, useAuth } from "./../../context/AuthProvider";
 import { Stack } from "expo-router";
-import HomeHeaderRight from "@/components/HomeHeaderRight";
 import global from "@/style/global";
 
 function RootNavigator() {
@@ -21,7 +20,6 @@ function RootNavigator() {
         headerStyle: global.headerStyle,
         headerTintColor: "white",
         headerShadowVisible: false,
-        headerRight: () => <HomeHeaderRight />,
       }}
     >
       <Stack.Screen name="index" options={{ title: "Home" }} />

@@ -47,18 +47,21 @@ export default function SignUp() {
     <View style={global.page}>
       <View style={global.card}>
         <View style={global.viewBox}>
-          <FormInput 
+          <FormInput
+            label="Email"
             control={control} 
             name="email" 
             placeholder="Email" 
           />
           <FormInput
+            label="Password"
             control={control}
             name="password"
             placeholder="Password"
             secure
           />
           <FormInput
+            label="Confirm Password"
             control={control}
             name="confirmPass"
             placeholder="Confirm password"

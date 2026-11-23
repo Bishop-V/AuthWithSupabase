@@ -4,6 +4,7 @@ import { type signUpFormType } from "@/schemas/signUp";
 import global from "@/style/global";
 
 type signUpFormProps = {
+  label: string;
   control: Control<signUpFormType>;
   name: FieldPath<signUpFormType>;
   placeholder: string;
@@ -11,6 +12,7 @@ type signUpFormProps = {
 };
 
 export default function FormInput({
+  label,
   control,
   name,
   secure,
@@ -26,6 +28,7 @@ export default function FormInput({
           fieldState: { error },
         }) => (
           <>
+            <Text style={global.label}>{label}</Text>
             <TextInput
               style={[global.formBox, error && global.formBoxError]}
               onChangeText={onChange}

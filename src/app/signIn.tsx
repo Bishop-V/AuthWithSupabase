@@ -7,6 +7,7 @@ import { supabase } from "./../../utils/supabase";
 import { router } from "expo-router";
 import global from "@/style/global";
 import { signinSchema, type SigninForm } from "@/schemas/signIn";
+import SignInInput from "@/components/SignInInput";
 
 export default function SignIn() {
   const [loading, setLoading] = useState(false);
@@ -46,40 +47,20 @@ export default function SignIn() {
       <View style={global.content}>
         {error && <Text style={global.error}>{error}</Text>}
 
-        <Text style={global.text}>Email</Text>
-        <Controller
-          control={control}
-          name="email"
-          render={({ field }) => (
-            <TextInput
-              style={global.input}
-              value={field.value}
-              onChangeText={field.onChange}
-              onBlur={field.onBlur}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoComplete="email"
-            />
-          )}
+        <SignInInput
+          label="Email"
+          control={control} 
+          name="email" 
+          placeholder="Email" 
         />
-        <Text style={global.error}>{errors.email?.message}</Text>
-
-        <Text style={global.text}>Password</Text>
-        <Controller
+        
+        <SignInInput
+          label="Password"
           control={control}
           name="password"
-          render={({ field }) => (
-            <TextInput
-              style={global.input}
-              value={field.value}
-              onChangeText={field.onChange}
-              onBlur={field.onBlur}
-              secureTextEntry
-              autoCapitalize="none"
-            />
-          )}
+          placeholder="Password"
+          secure
         />
-        <Text style={global.error}>{errors.password?.message}</Text>
 
         <Pressable style={global.button} onPress={handleSubmit(onSubmit)} disabled={loading}>
           {loading ? <ActivityIndicator /> : <Text>Sign in</Text>}

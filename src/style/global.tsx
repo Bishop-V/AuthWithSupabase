@@ -22,9 +22,10 @@ const global = StyleSheet.create({
     color: "crimson",
   },
   label: { 
-    fontSize: 12, 
-    color: "#666", 
-    marginTop: 8 
+    fontSize: 16, 
+    color: "#bebebe", 
+    marginTop: 6,
+    marginBottom: 2,
   },
   value: { 
     fontSize: 18 
