@@ -59,7 +59,9 @@ export default function Profile() {
             <Text style={global.label}>Email: {profile.email}</Text>
           </View>
         ) : (
-          !error && <Text style={global.label}>No profile found for this account.</Text>
+          !error && (
+            <Text style={global.label}>No profile found for this account.</Text>
+          )
         )}
 
         <SignOut />

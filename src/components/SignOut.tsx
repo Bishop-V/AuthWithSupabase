@@ -3,16 +3,19 @@ import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { supabase } from "../../utils/supabase";
 import global from "@/style/global";
 
-export default function signOut() {
+export default function SignOut() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   async function handleSignOut() {
     setLoading(true);
     setError(null);
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      setError(error.message);
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) setError(error.message);
+    } catch {
+      setError("Could not sign out. Please try again");
+    } finally {
       setLoading(false);
     }
   }
