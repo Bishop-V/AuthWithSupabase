@@ -1,8 +1,10 @@
-.env set up
+1. .env set up
 
 Add .env file to the project folder (sent on D2L)
 
-one premade account 
+2. Test login
+
+Enter credentials to test:
 Email: ashleyhearn@gmail.com
 password: 111111
 
