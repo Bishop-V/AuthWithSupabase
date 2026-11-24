@@ -1,6 +1,6 @@
 .env set up
-EXPO_PUBLIC_SUPABASE_URL=https://kddsqbfrnvpnqllrxtck.supabase.co
-EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_o1gzHfzE46zu54LgLBkArA_vKAeZy8L
+
+Add .env file to the project folder (sent on D2L)
 
 one premade account 
 Email: ashleyhearn@gmail.com
