@@ -1,10 +1,12 @@
 # Set up
 
-## 1. .env set up 
+## .env set up 
 
 Add .env file to the project folder (sent on D2L)
 
-## 2. Launch app
+# Test
+
+## 1. Launch app
 
 run with ```npm run start```
 
