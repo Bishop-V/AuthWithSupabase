@@ -10,12 +10,23 @@ run with ```npm run start```
 
 ## 2. Test login
 
-Enter credentials to test:
+Press "Log in"
+
+Enter credentials to test validation:
 
 Email: ashleyhearn@gmail.com
 
 password: 111111
 
+Press "Log out"
+
+## 3. Sign up
+
+Press "Sign up"
+
+Enter desired credentials. 
+
+After creating account you will be logged in directly, and may log out and login again to test the database.
 
 # Supabase setup notes
 
